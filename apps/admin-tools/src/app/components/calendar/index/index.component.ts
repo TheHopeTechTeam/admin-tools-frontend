@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions } from '@fullcalendar/core';
 import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction';
-import multiMonthPlugin from '@fullcalendar/multiMonth';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import multiMonthPlugin from '@fullcalendar/multimonth';
 
 @Component({
   selector: 'app-index',
@@ -20,7 +20,7 @@ export class CalenedarIndexComponent {
 
   calendarOptions: CalendarOptions = {
     // 日曆類型
-    plugins: [multiMonthPlugin, dayGridPlugin, timeGridPlugin, interactionPlugin],
+    plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin, multiMonthPlugin],
     // 初始日曆類型
     initialView: 'multiMonthYear',
     // 顯示標題
@@ -35,7 +35,7 @@ export class CalenedarIndexComponent {
     customButtons: {
       addEventButton: {
         text: 'add event...',
-        // click: this.handleAddEventClick.bind(this)
+        // click: this.handleAddEventClick.bind(this);
       }
     },
     // 可編輯
@@ -52,7 +52,7 @@ export class CalenedarIndexComponent {
       {
         "title": "Long Event",
         "start": "2024-08-07",
-        "end": "2024-08-10",
+        "end": "2024-08-10"
       },
       {
         "groupId": "999",
